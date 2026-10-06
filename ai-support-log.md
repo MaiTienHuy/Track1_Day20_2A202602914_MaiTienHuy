@@ -2,18 +2,24 @@
 
 - **Học viên:** Mai Tiến Huy · **MHV:** 2A202602914
 - **Dự án:** CareLoop AI
+- **Công cụ AI:** Codex (OpenAI)
 
-| Mục | Ghi nhận |
-|---|---|
-| Công cụ | Codex (OpenAI) |
-| Đầu vào đã cung cấp | Brief bài lab Day 20 và bản mô tả CareLoop AI do nhóm chuẩn bị. |
-| Việc AI hỗ trợ | Tổ chức tệp Metrics Pack trực quan; brainstorm ứng viên core action; phản biện tính nhất quán của cadence và retention; gợi ý định nghĩa metric, tên event, trigger và tiêu chí nghiệm thu; soạn README và log. |
-| Quyết định thuộc học viên | Chọn core action là bệnh nhân hoàn tất check-in theo kế hoạch; chọn cadence D1/D3/D7/D14 vì nhu cầu theo dõi gắn với giai đoạn hồi phục và mốc do nhân viên y tế duyệt; chọn giả thuyết tỷ lệ check-in đúng cửa sổ tăng qua các mốc vì dữ liệu lần trước được lưu giúp lần sau dễ báo tình trạng và thấy tiến trình. |
-| Nguồn khác | Không dùng deck Day 20 vì deck chưa được cung cấp; framework được lấy từ brief do học viên gửi. Không dùng nguồn y khoa bên ngoài. |
-| Giới hạn | Các mục tiêu kỹ thuật trong mô tả dự án là target prototype, chưa có số đo thực tế. Các mốc theo dõi và cửa sổ metric là giả định sản phẩm để kiểm chứng, không phải khuyến nghị y khoa. |
+## Phần tôi đã làm
 
-## Lịch sử hỗ trợ
+1. Tôi cung cấp bản mô tả CareLoop AI do nhóm chuẩn bị, gồm bài toán sau xuất viện, các vai trò bệnh nhân/người chăm sóc/điều dưỡng và quy trình theo dõi hiện tại.
+2. Tôi nêu các điểm nghẽn của dự án: bệnh nhân phải ghi nhớ nhiều hướng dẫn, đội chăm sóc thiếu dữ liệu giữa hai lần liên hệ, khó thấy xu hướng xấu dần và follow-up thủ công khó mở rộng.
+3. Tôi xác định phạm vi MVP trong bản mô tả: chuyển hướng dẫn xuất viện thành care plan, thu thập check-in, sàng lọc tín hiệu nguy cơ và chuyển trường hợp cần thiết cho nhân viên y tế. Mục tiêu prototype chưa phải chứng minh giảm tái nhập viện.
+4. Tôi cung cấp ranh giới vận hành của sản phẩm: kế hoạch ban đầu cần người duyệt; AI không tự chẩn đoán, đổi thuốc hay tự đóng critical alert; trường hợp mơ hồ hoặc lỗi công cụ được chuyển người.
+5. Tôi cung cấp luồng theo dõi mẫu D1/D3/D7/D14, quy tắc nhắc sau 24 giờ và chuyển điều dưỡng nếu tiếp tục mất phản hồi. Đây là đầu vào để thiết kế cadence và window đo.
+6. Tôi chọn **bệnh nhân hoàn tất check-in theo care plan** làm core action cho bài cá nhân.
+7. Tôi chọn nhịp **theo mốc D1/D3/D7/D14** vì nhu cầu theo dõi gắn với giai đoạn hồi phục và mốc do nhân viên y tế duyệt.
+8. Tôi chọn hướng giả thuyết **tỷ lệ hoàn tất check-in đúng cửa sổ tăng qua các mốc**. Lý do tôi đưa ra: dữ liệu lần trước được lưu giúp lần sau dễ báo tình trạng và thấy tiến trình.
 
-1. **06/10/2026:** AI kiểm tra repo trống, dựng cấu trúc bài nộp và tệp HTML trực quan.
-2. **06/10/2026:** Học viên cung cấp mô tả dự án CareLoop AI; AI dùng thông tin này để phác thảo một use case nhất quán.
-3. **06/10/2026:** Học viên tự chọn ba quyết định lõi qua câu hỏi của AI: core action, cadence và hướng metric hypothesis; học viên cung cấp hai vế lý do. AI biên tập chúng thành câu và nối với hệ metric/tracking. AI đề xuất khung đánh giá 6 tuần để giả thuyết có thời hạn kiểm chứng; đây là giả định cho bản lab, chưa phải kết quả đo.
+## AI đã hỗ trợ
+
+Tôi dùng Codex để brainstorm ứng viên core action, đặt câu hỏi phản biện và biên tập các lựa chọn của tôi thành Metrics Pack. AI dự thảo công thức metric/retention, gợi ý event và tiêu chí tracking, tạo HTML/README/log, rồi kiểm tra cấu trúc tệp. AI đề xuất khung đánh giá giả thuyết **6 tuần**; cửa sổ check-in **24 giờ** và mốc xác nhận alert **15 phút** được suy ra từ quy tắc vận hành tôi đã cung cấp. Các ngưỡng này là giả định đo lường cho prototype.
+
+## Nguồn và giới hạn
+
+- Nguồn sử dụng: brief Day 20 và mô tả CareLoop AI tôi cung cấp. Deck bài giảng chưa được cung cấp cho AI; AI không dùng nguồn y khoa bên ngoài.
+- Các target kỹ thuật của CareLoop AI là mục tiêu prototype, chưa phải kết quả đo. Metrics Pack không khẳng định sản phẩm đã giảm tái nhập viện.
